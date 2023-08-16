@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!-- Programmer-Defined maximum function. -->
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Maximum of Three Values</title>
+      <style type = "text/css">
+         p { margin: 0; }
+      </style>
+      <script>
+
+         var input1 = parseFloat(window.prompt( "Enter first number", "0" ));
+         var input2 = parseFloat(window.prompt( "Enter second number", "0" ));
+         var input3 = parseFloat(window.prompt( "Enter third number", "0" )); 
+   
+   
+         var maxValue = maximum( input1, input2, input3 );
+
+         document.writeln( "<p>First number: " + input1 + "</p>" + "<p>Second number: " + input2 + "</p>" + "<p>Third number: " + input3 + "</p>" + "<p>Maximum is: " + maxValue + "</p>" );
+
+         // maximum function definition (called from line 22)
+         function maximum( x, y, z )               
+         {                                         
+            return Math.max( x, Math.max( y, z ) );
+         } // end function maximum                                         
+
+      </script>
+   </head><body></body>
+</html>
