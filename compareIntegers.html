@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Compare Integers</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var num1 = parseInt(prompt("Enter the first integer:"));
+        var num2 = parseInt(prompt("Enter the second integer:"));
+        
+        var difference = num1 - num2;
+        var isSmaller = difference < 0;
+        
+        var message = (isSmaller && num1 + difference != num2) ?
+            num1 + " is smaller" :
+            (difference == 0) ?
+            "These numbers are equal." :
+            num2 + " is smaller";
+        
+        alert(message);
+    </script>
+</body>
+</html>
