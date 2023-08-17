@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Person Information</title>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        function gatherInformation() {
+            var people = [];
+
+            for (var i = 0; i < 3; i++) {
+                var name = prompt("Enter person " + (i + 1) + "'s name:");
+                var age = parseInt(prompt("Enter " + name + "'s age:"));
+                var shoeSize = parseFloat(prompt("Enter " + name + "'s shoe size:"));
+
+                people.push({ name: name, age: age, shoeSize: shoeSize });
+            }
+
+            displayTable(people);
+        }
+
+        function displayTable(people) {
+            var tableContent = "<table border='1'><tr><th>Name</th><th>Age</th><th>Shoe Size</th></tr>";
+
+            for (var i = 0; i < people.length; i++) {
+                tableContent += "<tr><td>" + people[i].name + "</td><td>" + people[i].age + "</td><td>" + people[i].shoeSize + "</td></tr>";
+            }
+
+            tableContent += "</table>";
+
+            document.getElementById("infoTable").innerHTML = tableContent;
+        }
+    </script>
+</head>
+<body>
+    <h1>Enter Person Information</h1>
+    <button onclick="gatherInformation()">Enter Information</button>
+    <div id="infoTable"></div>
+</body>
+</html>
