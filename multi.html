@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<title>Learn multiplication</title>
+		<meta  charset="utf-8">
+		<script type="text/javascript" >
+			var number1;
+			var number2;
+			function integerPartOfTheQuotient(dividend, divisor){
+				var q = Math.floor(dividend / divisor);
+				return q;
+			}
+			function checkResult(){
+				var product = parseInt(document.getElementById("product").value);
+				if (product == number1 * number2){
+					document.getElementById("product").value = "";
+					document.getElementById("result").innerHTML  = "<font color='blue'>Very good! (<b>" + number1 + "</b> * <b>" + number2 + "</b> = <b>" + product + "</b>)</font>";
+					doCalculation();
+				}
+				else
+					document.getElementById("result").innerHTML  = "<font color='red'>No. Please try again.</font>";
+			}
+			function doCalculation(){
+				document.getElementById("controls").style.visibility = 'visible';
+				number1 = Math.floor((Math.random()*10));
+				number2 = Math.floor((Math.random()*10));
+				document.getElementById("question").innerHTML  = "How much is <b>" + number1 + "</b> times <b>" + number2 + "</b>?";
+				document.getElementById("product").focus();
+			}
+			function init(){
+				document.getElementById("controls").style.visibility = 'hidden'; 
+				doCalculation();
+			}
+		</script>     
+</head>
+<body onload="init();">
+  <h1> Welcome to the program to learn multiplication</h1>
+  <hr>
+  <p>
+  <div id="controls">
+    <label id="question"> </label><br/>
+    <input type="text" id="product"><button onclick="checkResult()">Check</button>
+	<label id="result"> </label>
+  </div>
+  </p>
+</body>
+</html>
