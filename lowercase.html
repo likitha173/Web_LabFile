@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Sample GUI</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+  }
+  .container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: white;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+  }
+  button {
+    margin: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  button:hover {
+    background-color: #0056b3;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h2>Simple Sample GUI</h2>
+    <button id="goodButton">Good Results</button>
+    <button id="badButton">Bad Results</button>
+    <p>Result: <span id="result">-</span></p>
+    <button id="lowerCase">Lower case</button>
+    <button id="upperCase">Upper case</button>
+    <button id="reset">Reset</button>
+  </div>
+
+  <script>
+    const resultElement = document.getElementById("result");
+    const goodButton = document.getElementById("goodButton");
+    const badButton = document.getElementById("badButton");
+    const lowerCaseButton = document.getElementById("lowerCase");
+    const upperCaseButton = document.getElementById("upperCase");
+    const resetButton = document.getElementById("reset");
+
+    let currentCaption = "";
+
+    goodButton.addEventListener("click", () => {
+      currentCaption = "Good Results";
+      resultElement.textContent = currentCaption;
+    });
+
+    badButton.addEventListener("click", () => {
+      currentCaption = "Bad Results";
+      resultElement.textContent = currentCaption;
+    });
+
+    lowerCaseButton.addEventListener("click", () => {
+      resultElement.textContent = currentCaption.toLowerCase();
+    });
+
+    upperCaseButton.addEventListener("click", () => {
+      resultElement.textContent = currentCaption.toUpperCase();
+    });
+
+    resetButton.addEventListener("click", () => {
+      currentCaption = "";
+      resultElement.textContent = "-";
+    });
+  </script>
+</body>
+</html>
